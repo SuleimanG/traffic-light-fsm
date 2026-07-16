@@ -14,7 +14,7 @@ RED → GREEN → YELLOW → RED
 ---
 
 ## State Diagram
-(Add image here)
+![FSM](State_Diagram2.png)
 
 ---
 
