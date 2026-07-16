@@ -6,7 +6,10 @@ This project implements a traffic light controller using Finite State Machine (F
 ---
 
 ## Design Concept
-We've got 3 states: RED, GREEN, YELLOW where a sequential transition is implemented based on timing.
+We've got 3 states: RED, GREEN, YELLOW where a sequential transition is implemented based on timing.  
+The system cycles through three states:  
+RED → GREEN → YELLOW → RED
+
 
 ---
 
