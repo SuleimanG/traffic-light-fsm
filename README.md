@@ -1,41 +1,23 @@
 # Traffic Light Controller (FSM)
 
-## Overview
-This project implements a traffic light controller using Finite State Machine (FSM) design in Verilog.
+This project implements the traffic light controller FSM from *Digital Design and Computer Architecture, RISC-V Edition* by Sarah L. Harris and David Harris (Chapter 3, Sequential Logic Design). The FSM specification and state encoding approach follow the textbook's example; the RTL implementation, testbenches, and verification are original work.
 
 ---
 
 ## Design Concept
-We've got 3 states: RED, GREEN, YELLOW where a sequential transition is implemented based on timing.  
-The system cycles through three states:  
-RED → GREEN → YELLOW → RED
 
+Two intersecting streets, each with a traffic sensor and a light:
 
----
+- **Inputs:** `T_A`, `T_B` — traffic sensors on each street (1 = traffic present)
+- **Outputs:** `L_A[1:0]`, `L_B[1:0]` — light state for each street (red / yellow / green)
+- **Control:** `CLK`, `Reset`
 
-## State Diagram
-![FSM](State_Diagram2.png)
-
----
-
-## Implementation
-Language: Verilog  
-Simulation tool: ModelSim / Vivado
+The controller is a 4-state Moore FSM (see state diagram below) that cycles each street through green → yellow → red while the other street does the opposite, advancing based on the traffic sensors.
 
 ---
 
-## Testbench
-Simulates timing transitions  
-Verifies correct state switching
+## Black-box view
+
+<img src="docs/diagrams/black_box.drawio.svg" width="500">
 
 ---
-
-## Results
-(Add waveform screenshot here)
-
----
-
-## What I Learned
-FSM design  
-Verilog basics  
-Debugging waveforms
