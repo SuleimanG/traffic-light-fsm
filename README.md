@@ -52,7 +52,7 @@ The design is split hierarchically, following the textbook's structure:
 ---
 
 ## Tools
+- Using EDA playground with Synopsys VCS 2025.06 for the web
+- and using Icarus Verilog to create the .VDC file and GTKwave to view the testbench simulation result for my local machine  
+  
 
-- Icarus Verilog 
-- GTKWave 
-- Quartus Prime 
