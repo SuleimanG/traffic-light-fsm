@@ -1,6 +1,6 @@
 # Traffic Light Controller (FSM)
 
-This project implements the traffic light controller FSM from *Digital Design and Computer Architecture, RISC-V Edition* by Sarah L. Harris and David Harris (Chapter 3, Sequential Logic Design). The FSM specification and state encoding approach follow the textbook's example; the RTL implementation, testbenches, and verification are original work.
+This project implements the traffic light controller FSM from *Digital Design and Computer Architecture, RISC-V Edition* by Sarah L. Harris and David Harris (Chapter 3, Sequential Logic Design). The FSM specification and state encoding approach follow the textbook's example; the RTL implementation, testbenches, and verification are my own work.
 
 ---
 
@@ -52,7 +52,9 @@ The design is split hierarchically, following the textbook's structure:
 ---
 
 ## Tools
-- Using EDA playground with Synopsys VCS 2025.06 for the web
-- and using Icarus Verilog to create the .VDC file and GTKwave to view the testbench simulation result for my local machine  
+- Using EDA playground with Synopsys VCS 2025.06 for the web.
+- And using Icarus Verilog to create the .VDC file and GTKwave to view the testbench simulation result for my local machine.
+- using drawio to draw the diagrams.
+    
   
 
