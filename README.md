@@ -53,7 +53,8 @@ The design is split hierarchically:
 
 ## Simulation
 
-**Try it yourself:** [EDA Playground (Synopsys VCS)](https://edaplayground.com/x/pRL_)
+- **Try it yourself:** [EDA Playground (Synopsys VCS)](https://edaplayground.com/x/pRL_)
+- See [simulation results](docs/sim/README.md) for phase-by-phase waveforms.
 
 ---
 
