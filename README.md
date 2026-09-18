@@ -33,28 +33,34 @@ On `Reset`, the FSM enters `S0` (`L_A` green, `L_B` red). Each clock cycle, the 
 
 - **`S0` → `S0`** while `T_A` is asserted (traffic still present on Academic Ave.)
 - **`S0` → `S1`** on `T̄_A` (street clears, `L_A` advances to yellow)
-- **`S1` → `S2`** unconditional (yellow always advances after one cycle)
+- **`S1` → `S2`** after the yellow-duration counter expires (`done` asserted)
 - **`S2` → `S2`** while `T_B` is asserted
 - **`S2` → `S3`** on `T̄_B`
-- **`S3` → `S0`** unconditional
-
+- **`S3` → `S0`** after the yellow-duration counter expires (`done` asserted)
 ---
 
 ## Architecture
 
-The design is split hierarchically, following the textbook's structure:
+The design is split hierarchically:
 
-- `next_state_logic` — combinational; computes next state from current state + `T_A`/`T_B`
-- `state_register` — sequential; holds current state, clocked on `CLK`, synchronous `Reset`
+- `next_state_logic` — combinational; computes next state from current state, `T_A`/`T_B`, and `done` (yellow-timer expiration)
+- `state_register` — sequential; holds current state, clocked on `CLK`, asynchronous `RESET`
 - `output_logic` — combinational; computes `L_A`/`L_B` from current state
-- `top_module` — instantiates and wires the above three
+- `counter` — sequential; parameterized (`YELLOW_DURATION`) timer that asserts `done` after the configured number of cycles while the FSM sits in a yellow state (`S1`/`S3`)
+- `traffic_light_fsm` — instantiates and wires the above four
+
+---
+
+## Simulation
+
+**Try it yourself:** [EDA Playground (Synopsys VCS)](https://edaplayground.com/x/pRL_)
 
 ---
 
 ## Tools
-- Using EDA playground with Synopsys VCS 2025.06 for the web.
-- And using Icarus Verilog to create the .VDC file and GTKwave to view the testbench simulation result for my local machine.
-- using drawio to draw the diagrams.
+- EDA Playground with Synopsys VCS 2025.06 (primary; see link above for a runnable simulation)
+- Icarus Verilog (`-g2012` for SystemVerilog support) + GTKWave for local simulation and waveform viewing
+- draw.io for diagrams
     
   
 
